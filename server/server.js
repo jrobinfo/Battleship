@@ -39,6 +39,15 @@ wss.on('connection', (ws) => {
                     ws.send(JSON.stringify({ type: 'error', message: 'Invalid game code' }));
                 }
                 break;
+            case 'placeShip':
+                // Validate ship positions
+                if (validateShipPositions(data.shipPositions)) {
+                    const playerIndex = games[data.gameCode].players.indexOf(ws);
+                    games[data.gameCode].playerShips[playerIndex] = data.shipPositions;
+                } else {
+                    ws.send(JSON.stringify({ type: 'error', message: 'Invalid ship positions' }));
+                }
+                break;
             case 'move':
                 // Handle player moves and game logic here
                 break;
