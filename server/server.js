@@ -19,7 +19,15 @@ wss.on('connection', (ws) => {
             case 'create':
             const gameCode = generateGameCode();
             console.log("Creating game with code: " + gameCode);
-            games[gameCode] = { players: [ws], board: [], gameState: 'waiting' };
+            games[gameCode] = { 
+                players: [ws], 
+                board: [], 
+                gameState: 'waiting',
+                playerShips: [],
+                playerHits: [],
+                playerMisses: [],
+                turn: 0
+            };
             ws.send(JSON.stringify({ type: 'gameCode', gameCode: gameCode }));
             break;
             case 'join':
