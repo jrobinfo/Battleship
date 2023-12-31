@@ -1,0 +1,23 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Battleship Game</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="lobby">
+        <input type="text" id="gameCodeInput" placeholder="Enter Game Code">
+        <button id="joinGameBtn">Join Game</button>
+        <button id="createGameBtn">Create Game</button>
+        <div id="gameCodeDisplay"></div> <!-- Element to display game code -->
+    </div>
+    <div id="gameBoard" style="display: none;">
+      <div id="playerBoard" class="board"></div>
+      <div id="opponentBoard" class="board"></div>
+        <!-- Game board elements here -->
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+
+/* Add styles for the game lobby, boards, and buttons */
+.board {
+    display: grid;
+    grid-template-columns: repeat(10, 1fr); /* 10x10 grid */
+    grid-template-rows: repeat(10, 1fr);
+    /* Add more styles for the board appearance */
+}
